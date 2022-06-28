@@ -21,14 +21,14 @@ apt install nala -y
 nala upgrade -y
 
 # Add base packages
-nala install unzip picom openbox sudo nitrogen geany apt-transport-https curl zsh tint2 lightdm rofi kitty thunar flameshot neofetch sxhkd lxpolkit lxappearance xorg -y
+nala install unzip picom openbox sudo nitrogen geany apt-transport-https curl zsh tint2 lightdm rofi kitty thunar flameshot neofetch sxhkd lxpolkit lxappearance xorg network-manager-openvpn-gnome -y
 nala install papirus-icon-theme lxappearance fonts-noto-color-emoji fonts-firacode fonts-font-awesome libqt5svg5 qml-module-qtquick-controls -y
 
 # Install Brave Browser
 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-nala update
-nala install brave-browser
+nala ugrade -y
+nala install brave-browser -y
 
 
 # Download Openbox Theme
@@ -44,6 +44,7 @@ fc-cache -vf
 
 cd $builddir
 mkdir -p /home/$username/.config
+cp -aR /etc/xdg/openbox /home/$username/.config/
 cp .Xresources /home/$username
 cp .Xnord /home/$username
 #cp -R dotfiles/* /home/$username/.config/
