@@ -32,8 +32,8 @@ nala install brave-browser
 
 
 # Download Openbox Theme
-rm -rf /usr/share/themes
-git clone https://github.com/addy-dclxvi/openbox-theme-collections  /usr/share/themes
+#rm -rf /usr/share/themes
+git clone https://github.com/addy-dclxvi/openbox-theme-collections  /home/$username/.themes
 
 # Fira Code Nerd Font variant needed
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v1.1.0/FiraCode.zip
